@@ -1,0 +1,29 @@
+{
+  "name": "Botcasts",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rebornix.ruby",
+        "castwide.solargraph",
+        "kaiwood.endwise",
+        "misogi.ruby-rubocop",
+        "redhat.vscode-yaml",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "ruby.useBundler": true,
+        "ruby.useLanguageServer": true,
+        "ruby.lint": {
+          "rubocop": true
+        }
+      }
+    }
+  },
+  "forwardPorts": [3000, 5432, 6379],
+  "postCreateCommand": "./bin/setup",
+  "remoteUser": "vscode"
+}
